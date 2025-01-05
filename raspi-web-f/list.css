@@ -1,0 +1,35 @@
+body {
+    background: #797979;
+    font-family: "Benne", sans-serif;
+}
+button#back {
+    float: left;
+    height: 28px;
+    margin-right: 10px;
+
+    border: none;
+    border-radius: 10px;
+}
+table {
+    /*border-collapse: collapse;*/
+    width: 100%;
+}
+tr {
+    background-color: #d1d1d1;
+    font-size: 1.3em;
+}
+tr:hover {
+    cursor: pointer;
+    background-color: #b1b1b1;
+}
+#thead:hover {
+    cursor: auto;
+    background-color: #d1d1d1;
+}
+th {
+    text-align: left;
+}
+th, td {
+    padding-left: 10px;
+    padding-right: 10px;
+}
