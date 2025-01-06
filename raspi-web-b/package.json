@@ -1,0 +1,21 @@
+{
+  "name": "file-server-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["file-server", "nodejs", "backend", "express"],
+  "author": "XP_Raven_",
+  "license": "GPLv3",
+  "description": "A simple NodeJS file-server",
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/XPRaven/file-server.git"
+  }
+}
