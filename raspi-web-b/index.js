@@ -73,8 +73,7 @@ app.get('/2d/:collection/:audio', (req, res) => {
 
 // Test API
 app.get('/test', (req, res) => {
-    console.log('Test aufgerufen')
-    res.sendFile(path.join(__dirname, './4d/Hazbin Hotel/1 Overture.mp4'));
+    console.log('Hello World');
 });
 
 // Server start
