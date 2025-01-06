@@ -5,6 +5,7 @@ body {
 button#back {
     float: left;
     height: 28px;
+    width: 35px;
     margin-right: 10px;
 
     border: none;
