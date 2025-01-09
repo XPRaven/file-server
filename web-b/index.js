@@ -10,17 +10,17 @@ const __dirname = path.resolve('');
 
 // Setup
 // Setting to fetch static files (CSS) from the frontend directory
-app.use(express.static(path.join(__dirname, '../raspi-web-f')));
+app.use(express.static(path.join(__dirname, '../web-f')));
 
 // Routes
 // Homepage
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../raspi-web-f/index.html'));
+    res.sendFile(path.join(__dirname, '../web-f/index.html'));
 });
 
 // Generic list page (differentiation managed by frontend reading parameters)
 app.get('/list', (req, res) => {
-    res.sendFile(path.join(__dirname, '../raspi-web-f/list.html'));
+    res.sendFile(path.join(__dirname, '../web-f/list.html'));
 });
 
 // Video data API
