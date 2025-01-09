@@ -9,18 +9,21 @@ const app = express();
 const __dirname = path.resolve('');
 
 // Setup
-// app.use(express.json());
+// Setting to fetch static files (CSS) from the frontend directory
 app.use(express.static(path.join(__dirname, '../raspi-web-f')));
 
 // Routes
+// Homepage
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../raspi-web-f/index.html'));
 });
 
+// Video page
 app.get('/video', (req, res) => {
     res.sendFile(path.join(__dirname, '../raspi-web-f/video.html'));
 });
 
+// Video data API
 app.get('/video/files', (req, res) => {
     try {
         const fileData = getFileData('./video');
@@ -30,15 +33,18 @@ app.get('/video/files', (req, res) => {
     }
 });
 
+// Video file
 app.get('/video/:collection/:video', (req, res) => {
     const { collection, video } = req.params;
     res.sendFile(path.join(__dirname, './video', collection, video));
 });
 
+// Literature page
 app.get('/literature', (req, res) => {
     res.sendFile(path.join(__dirname, '../raspi-web-f/literature.html'));
 });
 
+// Literature data API
 app.get('/literature/files', (req, res) => {
     try {
         const fileData = getFileData('./literature');
@@ -48,15 +54,18 @@ app.get('/literature/files', (req, res) => {
     }
 });
 
+// Literature file
 app.get('/literature/:collection/:book', (req, res) => {
     const { collection, book } = req.params;
     res.sendFile(path.join(__dirname, './literature', collection, book));
 });
 
+// Audio page
 app.get('/audio', (req, res) => {
     res.sendFile(path.join(__dirname, '../raspi-web-f/audio.html'));
 });
 
+// Audio data API
 app.get('/audio/files', (req, res) => {
     try {
         const fileData = getFileData('./audio');
@@ -66,6 +75,7 @@ app.get('/audio/files', (req, res) => {
     }
 });
 
+// Audio file
 app.get('/audio/:collection/:audio', (req, res) => {
     const { collection, audio } = req.params;
     res.sendFile(path.join(__dirname, './audio', collection, audio));
