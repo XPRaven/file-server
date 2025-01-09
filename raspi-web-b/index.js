@@ -74,6 +74,7 @@ app.get('/audio/:collection/:audio', (req, res) => {
 // Test API
 app.get('/test', (req, res) => {
     console.log('Hello World');
+    res.send('Hello World');
 });
 
 // Server start
