@@ -18,9 +18,9 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../raspi-web-f/index.html'));
 });
 
-// Video page
-app.get('/video', (req, res) => {
-    res.sendFile(path.join(__dirname, '../raspi-web-f/video.html'));
+// Generic list page (differentiation managed by frontend reading parameters)
+app.get('/list', (req, res) => {
+    res.sendFile(path.join(__dirname, '../raspi-web-f/list.html'));
 });
 
 // Video data API
@@ -39,11 +39,6 @@ app.get('/video/:collection/:video', (req, res) => {
     res.sendFile(path.join(__dirname, './video', collection, video));
 });
 
-// Literature page
-app.get('/literature', (req, res) => {
-    res.sendFile(path.join(__dirname, '../raspi-web-f/literature.html'));
-});
-
 // Literature data API
 app.get('/literature/files', (req, res) => {
     try {
@@ -58,11 +53,6 @@ app.get('/literature/files', (req, res) => {
 app.get('/literature/:collection/:book', (req, res) => {
     const { collection, book } = req.params;
     res.sendFile(path.join(__dirname, './literature', collection, book));
-});
-
-// Audio page
-app.get('/audio', (req, res) => {
-    res.sendFile(path.join(__dirname, '../raspi-web-f/audio.html'));
 });
 
 // Audio data API

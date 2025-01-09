@@ -2,20 +2,19 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Literatur</title>
+    <title>Index</title>
 </head>
 <body>
-<!-- TODO: actually should just be loading one HTML file that changes details instead of 3 times a similar one -->
 <div id="flex-container">
-    <a class="option" href="./video">
+    <a class="option" href="./list?d=4">
         &#127902;
     </a>
     <hr class="separator">
-    <a class="option" href="./literature">
+    <a class="option" href="./list?d=3">
         &#128366;
     </a>
     <hr class="separator">
-    <a class="option" href="./audio">
+    <a class="option" href="./list?d=2">
         &#127901;
     </a>
 </div>
@@ -57,11 +56,11 @@
 <script>
     document.addEventListener("keypress", function(event) {
         if (event.key === "1") {
-            window.location.href = "./video"
+            window.location.href = "./list?d=4";
         } else if (event.key === "2") {
-            window.location.href = "./literature"
+            window.location.href = "./list?d=3";
         } else if (event.key === "3") {
-            window.location.href = "./audio"
+            window.location.href = "./list?d=2";
         }
     })
 </script>
