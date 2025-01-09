@@ -50,7 +50,7 @@ export function getFileData(directoryToScan) {
         const files = getFilePaths(directoryToScan);
         for (const file of files) {
             // Split path into root dir, series dir, filename
-            const [root, series, filename] = file.split(path.sep);
+            const [, series, filename] = file.split(path.sep);
 
             // Separate episode number from episode name and extension
             const { number: no, rest: episodeName} = splitNoFromName(filename);
