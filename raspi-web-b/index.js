@@ -17,58 +17,58 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../raspi-web-f/index.html'));
 });
 
-app.get('/4d', (req, res) => {
-    res.sendFile(path.join(__dirname, '../raspi-web-f/4d.html'));
+app.get('/video', (req, res) => {
+    res.sendFile(path.join(__dirname, '../raspi-web-f/video.html'));
 });
 
-app.get('/4d/files', (req, res) => {
+app.get('/video/files', (req, res) => {
     try {
-        const fileData = getFileData('./4d');
+        const fileData = getFileData('./video');
         res.send(fileData);
     } catch (e) {
         console.error(e);
     }
 });
 
-app.get('/4d/:collection/:video', (req, res) => {
+app.get('/video/:collection/:video', (req, res) => {
     const { collection, video } = req.params;
-    res.sendFile(path.join(__dirname, './4d', collection, video));
+    res.sendFile(path.join(__dirname, './video', collection, video));
 });
 
-app.get('/3d', (req, res) => {
-    res.sendFile(path.join(__dirname, '../raspi-web-f/3d.html'));
+app.get('/literature', (req, res) => {
+    res.sendFile(path.join(__dirname, '../raspi-web-f/literature.html'));
 });
 
-app.get('/3d/files', (req, res) => {
+app.get('/literature/files', (req, res) => {
     try {
-        const fileData = getFileData('./3d');
+        const fileData = getFileData('./literature');
         res.send(fileData);
     } catch (e) {
         console.error(e);
     }
 });
 
-app.get('/3d/:collection/:book', (req, res) => {
+app.get('/literature/:collection/:book', (req, res) => {
     const { collection, book } = req.params;
-    res.sendFile(path.join(__dirname, './3d', collection, book));
+    res.sendFile(path.join(__dirname, './literature', collection, book));
 });
 
-app.get('/2d', (req, res) => {
-    res.sendFile(path.join(__dirname, '../raspi-web-f/2d.html'));
+app.get('/audio', (req, res) => {
+    res.sendFile(path.join(__dirname, '../raspi-web-f/audio.html'));
 });
 
-app.get('/2d/files', (req, res) => {
+app.get('/audio/files', (req, res) => {
     try {
-        const fileData = getFileData('./2d');
+        const fileData = getFileData('./audio');
         res.send(fileData);
     } catch (e) {
         console.error(e);
     }
 });
 
-app.get('/2d/:collection/:audio', (req, res) => {
+app.get('/audio/:collection/:audio', (req, res) => {
     const { collection, audio } = req.params;
-    res.sendFile(path.join(__dirname, './2d', collection, audio));
+    res.sendFile(path.join(__dirname, './audio', collection, audio));
 });
 
 // Test API

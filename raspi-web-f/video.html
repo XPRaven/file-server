@@ -2,26 +2,26 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Bücher</title>
+    <title>Filme und Serien</title>
 
-    <link rel="stylesheet" href="./list.css" id="style">
+  <link rel="stylesheet" href="./list.css" id="style">
 </head>
 <body>
 <div>
     <button id="back" onclick="history.back()">&#9204;</button>
-    <h2>Bücher</h2>
+    <h2>Filme und Serien</h2>
 </div>
 <table id="table">
     <tr id="thead">
-        <th style="width: 30%">Reihe</th>
+        <th style="width: 30%">Serie</th>
         <th style="width: 0">#</th>
-        <th style="width: 70%">Buch</th>
+        <th style="width: 70%">Episode</th>
     </tr>
 </table>
 </body>
 <script>
     async function fetchData() {
-        const response = await fetch('./3d/files');
+        const response = await fetch('./video/files');
         return await response.json();
     }
 

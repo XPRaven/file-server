@@ -1,5 +1,5 @@
 .idea
-raspi-web-b/2d/*
-raspi-web-b/3d/*
-raspi-web-b/4d/*
+raspi-web-b/audio/*
+raspi-web-b/literature/*
+raspi-web-b/video/*
 raspi-web-b/node_modules
