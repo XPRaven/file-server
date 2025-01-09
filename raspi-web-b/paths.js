@@ -49,13 +49,17 @@ export function getFileData(directoryToScan) {
         let allFiles = [];
         const files = getFilePaths(directoryToScan);
         for (const file of files) {
-            const splitFilename = file.split(path.sep);
-            const series = splitFilename[1];
-            const noEpisodeObject = splitNoFromName(splitFilename[2]);
-            const no = noEpisodeObject.number;
-            const filename = noEpisodeObject.rest
-            const extension = path.extname(filename);
-            const episode = path.basename(filename, extension);
+            // Split path into root dir, series dir, filename
+            const [root, series, filename] = file.split(path.sep);
+
+            // Separate episode number from episode name and extension
+            const { number: no, rest: episodeName} = splitNoFromName(filename);
+
+            // Get filename without extension
+            const extension = path.extname(episodeName);
+            const episode = path.basename(episodeName, extension);
+
+            // Assemble data packet
             const fileData = {
                 series: series,
                 no: no,
